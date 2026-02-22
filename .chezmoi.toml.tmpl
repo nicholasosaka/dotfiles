@@ -3,5 +3,11 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $name := promptStringOnce . "name" "Full name (for git commits)" -}}
+
 [data]
     osid = {{ $osid | quote }}
+    email = {{ $email | quote }}
+    name = {{ $name | quote }}
+    editor = "nvim"
