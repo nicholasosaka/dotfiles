@@ -3,7 +3,7 @@ return {
   build = ":TSUpdate",
 
   config = function()
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter.config").setup({
         ensure_installed = {
           "bash",
           -- The five parsers below should always be installed
