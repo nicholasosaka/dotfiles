@@ -26,11 +26,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-
-## FANCY MOTD
-if [ -z "$FANCY_MOTD" ]; then
-    echo "hello"
-    /opt/fancy-motd/motd.sh
-    export FANCY_MOTD=1
+if uwsm check may-start && uwsm select; then
+  exec uwsm start default
 fi
-. "$HOME/.cargo/env"
+
