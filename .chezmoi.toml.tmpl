@@ -6,8 +6,12 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $name := promptStringOnce . "name" "Full name (for git commits)" -}}
 
+{{- $choices := list "nvim" "vim" "nano" -}}
+{{- $editor := promptChoiceOnce . "editor" "Select default editor" $choices -}}
+
 [data]
     osid = {{ $osid | quote }}
     email = {{ $email | quote }}
     name = {{ $name | quote }}
-    editor = "nvim"
+    editor = {{ $editor | toToml }}
+
