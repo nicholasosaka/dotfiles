@@ -1,15 +1,28 @@
-{{ if eq .osid "darwin" -}}#!/bin/sh
+#!/bin/sh
+
+brew_installed_retval=$(which brew)
+if [[ $? != 0 ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew is already installed"
+fi
+
+{{ if eq .osid "darwin" -}}
 # macOS-specific code
 brew install neovim starship zoxide bat exa ripgrep
-{{ else if eq .osid "linux-debian" -}}#!/bin/sh
+{{ else if eq .osid "linux-debian" -}}
 # Debian-specific code
 sudo apt-get install neovim starship zoxide bat exa zsh ripgrep git
-{{ else if eq .osid "linux-fedora" -}}#!/bin/sh
+{{ else if eq .osid "linux-fedora" -}}
 # Fedora-specific code
 sudo dnf install neovim python3-neovim zoxide bat exa zsh ripgrep gti
 sudo dnf copr enable atim/starship
 dnf install starship 
-{{ else if eq .osid "linux-arch" -}}#!/bin/sh
+{{ else if eq .osid "linux-arch" -}}
 # Arch-specific code
 sudo pacman -S --needed neovim starship zoxide exa bat exa zsh ripgrep git
 {{ end }}
+
+# install password manager cli
+
+brew install dashlane/tap/dashlane-cli
