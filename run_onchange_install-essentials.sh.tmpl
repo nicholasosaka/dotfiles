@@ -1,0 +1,15 @@
+{{ if eq .osid "darwin" -}}#!/bin/sh
+# macOS-specific code
+brew install neovim starship zoxide bat exa ripgrep
+{{ else if eq .osid "linux-debian" -}}#!/bin/sh
+# Debian-specific code
+sudo apt-get install neovim starship zoxide bat exa zsh ripgrep git
+{{ else if eq .osid "linux-fedora" -}}#!/bin/sh
+# Fedora-specific code
+sudo dnf install neovim python3-neovim zoxide bat exa zsh ripgrep gti
+sudo dnf copr enable atim/starship
+dnf install starship 
+{{ else if eq .osid "linux-arch" -}}#!/bin/sh
+# Arch-specific code
+sudo pacman -S --needed neovim starship zoxide exa bat exa zsh ripgrep git
+{{ end }}
