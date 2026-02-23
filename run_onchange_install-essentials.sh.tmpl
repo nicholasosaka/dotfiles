@@ -21,7 +21,7 @@ EOF
 {{ else if eq .osid "linux-debian" -}}
 # Debian-specific code
 sudo apt-get install <<EOF
-{{ range .packages.debian.pacs -}}
+{{ range .packages.debian.apts -}}
 {{ . }}
 {{ end -}}
 EOF

@@ -27,3 +27,16 @@ packages:
       - 'ripgrep'
       - 'git'
       - 'fastfetch'
+  debian:
+    brews:
+      - 'dashlane/tap/dashlane-cli'
+    apts:
+      - 'zoxide'
+      - 'neovim'
+      - 'starship'
+      - 'exa'
+      - 'bat'
+      - 'zsh'
+      - 'ripgrep'
+      - 'git'
+      - 'fastfetch'
