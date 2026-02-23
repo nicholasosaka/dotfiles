@@ -1,0 +1,12 @@
+#!/bin/sh
+
+{{ if eq .osid "linux-arch" -}}
+# Arch-specific code
+sudo pacman -S --needed - <<EOF
+{{ range .hypr.arch.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
+
+{{- end -}}
+
