@@ -1,0 +1,29 @@
+packages:
+  darwin:
+    brews:
+      - 'fastfetch'
+      - 'zoxide'
+      - 'neovim'
+      - 'starship'
+      - 'bat' 
+      - 'exa'
+      - 'ripgrep'
+      - 'dashlane/tap/dashlane-cli'
+    casks:
+      - 'firefox'
+      - 'iterm2'
+      - 'obsidian'
+      - 'visual-studio-code'
+  arch:
+    brews:
+      - 'dashlane/tap/dashlane-cli'
+    pacs:
+      - 'zoxide'
+      - 'neovim'
+      - 'starship'
+      - 'exa'
+      - 'bat'
+      - 'zsh'
+      - 'ripgrep'
+      - 'git'
+      - 'fastfetch'

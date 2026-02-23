@@ -9,20 +9,42 @@ fi
 
 {{ if eq .osid "darwin" -}}
 # macOS-specific code
-brew install neovim starship zoxide bat exa ripgrep
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+
 {{ else if eq .osid "linux-debian" -}}
 # Debian-specific code
-sudo apt-get install neovim starship zoxide bat exa zsh ripgrep git
-{{ else if eq .osid "linux-fedora" -}}
-# Fedora-specific code
-sudo dnf install neovim python3-neovim zoxide bat exa zsh ripgrep gti
-sudo dnf copr enable atim/starship
-dnf install starship 
+sudo apt-get install <<EOF
+{{ range .packages.debian.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
+
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.debian.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+
 {{ else if eq .osid "linux-arch" -}}
 # Arch-specific code
-sudo pacman -S --needed neovim starship zoxide exa bat exa zsh ripgrep git
-{{ end }}
+sudo pacman -S --needed - <<EOF
+{{ range .packages.arch.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
 
-# install password manager cli
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.arch.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
 
-brew install dashlane/tap/dashlane-cli
+{{- end -}}
+
