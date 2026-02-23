@@ -8,6 +8,7 @@ packages:
       - 'bat' 
       - 'exa'
       - 'ripgrep'
+      - 'btop'
       - 'dashlane/tap/dashlane-cli'
     casks:
       - 'firefox'
@@ -27,6 +28,7 @@ packages:
       - 'ripgrep'
       - 'git'
       - 'fastfetch'
+      - 'btop'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
@@ -40,3 +42,4 @@ packages:
       - 'ripgrep'
       - 'git'
       - 'fastfetch'
+      - 'btop'
