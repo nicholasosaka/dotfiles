@@ -3,3 +3,11 @@
 	email = {{ .email }}
 [core]
 	editor = {{ .editor }}
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[branch]
+	sort = -committerdate    # Sort branches by most recent commit first
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
