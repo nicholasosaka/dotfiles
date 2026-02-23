@@ -26,7 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-if uwsm check may-start && uwsm select; then
-  exec uwsm start default
+if who am i | awk '{print $2}' | grep -q "pts"; then
+  ## remote shell
+else
+  ## tty login
+  if uwsm check may-start && uwsm select; then
+    exec uwsm start default
+  fi
 fi
-
