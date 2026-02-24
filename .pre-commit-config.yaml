@@ -39,4 +39,4 @@ repos:
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
-        args: [--force-scope, --strict, --verbose, --scopes, "all,macos,arch", feat, fix, chore, test, build, ci, docs, perf, refactor, revert, style]
+        args: [--force-scope, --strict, --verbose, --scopes, "all,macos,arch,debian,release", feat, fix, chore, test, build, ci, docs, perf, refactor, revert, style, bump]
