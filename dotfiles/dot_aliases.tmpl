@@ -1,5 +1,6 @@
 alias vim="nvim"
 alias inv='nvim $(fzf -m --preview="bat --style=-numbers --color=always {}")'
+alias cz='uv run cz' # this is only for use in the chezmoi directory
 {{ if eq .osid "darwin" -}}
 alias ls="eza --icons --group-directories-first"
 alias ll="eza --icons -1 --group-directories-first --long"
