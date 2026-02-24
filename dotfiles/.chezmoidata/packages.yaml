@@ -26,6 +26,7 @@ packages:
       - 'iterm2'
       - 'obsidian'
       - 'visual-studio-code'
+      - 'font-jetbrainsmono-nerd-font'
   arch:
     brews:
       - 'dashlane/tap/dashlane-cli'
@@ -51,6 +52,7 @@ packages:
       - 'jq'
       - 'jnv'
       - 'fd'
+      - 'ttf-jetbrains-mono-nerd'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
