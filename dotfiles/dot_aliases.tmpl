@@ -1,11 +1,11 @@
 alias vim="nvim"
-alias bat="batcat"
 alias inv='nvim $(fzf -m --preview="bat --style=-numbers --color=always {}")'
 {{ if eq .osid "darwin" -}}
 alias ls="eza --icons --group-directories-first"
 alias ll="eza --icons -1 --group-directories-first --long"
 alias la="eza -a --icons -1 --group-directories-first --long"
 {{ else -}}
+alias bat="batcat"
 alias ls="exa --icons --group-directories-first"
 alias ll="exa --icons -1 --group-directories-first --long"
 alias la="exa -a --icons -1 --group-directories-first --long"
