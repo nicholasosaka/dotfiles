@@ -5,7 +5,7 @@ packages:
       - 'zoxide'
       - 'neovim'
       - 'starship'
-      - 'bat' 
+      - 'bat'
       - 'eza'
       - 'ripgrep'
       - 'btop'
@@ -19,6 +19,7 @@ packages:
       - 'ttyd' # required by vhs
       - 'hyperfine'
       - 'jnv'
+      - 'fd'
     casks:
       - 'firefox'
       - 'iterm2'
@@ -47,6 +48,7 @@ packages:
       - 'vhs'
       - 'hyperfine'
       - 'jnv'
+      - 'fd'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
@@ -70,3 +72,4 @@ packages:
       - 'ffmpeg'
       - 'fzf'
       - 'hyperfine'
+      - 'fd'
