@@ -26,6 +26,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+{{ if eq .osid "linux-arch" -}}
+
 if who am i | awk '{print $2}' | grep -q "pts"; then
   ## remote shell
 else
@@ -34,3 +36,13 @@ else
     exec uwsm start default
   fi
 fi
+
+{{ else if eq .osid "darwin" -}}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
+{{ end -}}

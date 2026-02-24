@@ -1,0 +1,20 @@
+source ~/.aliases
+source ~/.env
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+
+# source .local/bin/env if it exists
+if [ -f "$HOME/.local/bin/env" ] ; then
+  . "$HOME/.local/bin/env"
+fi
+
+{{ if eq .osid "darwin" -}}
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+{{ else if eq .osid "linux-arch" -}}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
+{{ end -}}

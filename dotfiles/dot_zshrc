@@ -1,7 +1,0 @@
-source ~/.aliases
-source ~/.env
-
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-source <(fzf --zsh)
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
