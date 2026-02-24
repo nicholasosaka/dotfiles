@@ -1,6 +1,9 @@
 source ~/.aliases
 source ~/.env
 
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
@@ -11,9 +14,6 @@ if [ -f "$HOME/.local/bin/env" ] ; then
 fi
 
 {{ if eq .osid "darwin" -}}
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 {{- else if eq .osid "linux-arch" -}}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
