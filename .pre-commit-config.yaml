@@ -10,16 +10,26 @@ repos:
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
-      - id: check-json
-        exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
       - id: check-merge-conflict
       - id: check-symlinks
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: check-json
+        exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
       - id: check-xml
         exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
       - id: check-yaml
+        exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
+      - id: check-toml
         exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
       - id: destroyed-symlinks
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
       - id: trailing-whitespace
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--force-scope, --strict, --verbose, --scopes, "all,macos,arch", feat, fix, chore, test, build, ci, docs, perf, refactor, revert, style]
