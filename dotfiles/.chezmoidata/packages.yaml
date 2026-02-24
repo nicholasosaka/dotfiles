@@ -18,6 +18,7 @@ packages:
       - 'vhs'
       - 'ttyd' # required by vhs
       - 'hyperfine'
+      - 'jq'
       - 'jnv'
       - 'fd'
     casks:
@@ -47,6 +48,7 @@ packages:
       - 'glow'
       - 'vhs'
       - 'hyperfine'
+      - 'jq'
       - 'jnv'
       - 'fd'
   debian:
@@ -73,3 +75,5 @@ packages:
       - 'fzf'
       - 'hyperfine'
       - 'fd'
+      - 'jq'
+      - 'jnv'
