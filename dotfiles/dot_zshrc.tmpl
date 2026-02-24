@@ -11,10 +11,15 @@ if [ -f "$HOME/.local/bin/env" ] ; then
 fi
 
 {{ if eq .osid "darwin" -}}
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-{{ else if eq .osid "linux-arch" -}}
+{{- else if eq .osid "linux-arch" -}}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+{{- end }}
 
-{{ end -}}
+if command -v uv >/dev/null 2>&1; then
+  eval "$(uv generate-shell-completion zsh)"
+  eval "$(uvx --generate-shell-completion zsh)"
+fi
