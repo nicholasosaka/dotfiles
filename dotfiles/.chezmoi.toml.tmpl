@@ -4,14 +4,13 @@
 {{- end -}}
 
 {{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $name := promptStringOnce . "name" "Full name (for git commits)" -}}
+{{- $name := promptStringOnce . "name" "Full name" -}}
 
 {{- $choices := list "nvim" "vim" "nano" -}}
-{{- $editor := promptChoiceOnce . "editor" "Select default editor" $choices -}}
+{{- $editor := promptChoiceOnce . "editor" "Default editor" $choices -}}
 
 [data]
     osid = {{ $osid | quote }}
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     editor = {{ $editor | toToml }}
-
