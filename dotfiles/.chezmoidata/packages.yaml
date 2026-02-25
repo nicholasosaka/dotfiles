@@ -21,6 +21,12 @@ packages:
       - 'jq'
       - 'jnv'
       - 'fd'
+      - 'yazi'
+      - 'ffmpeg-full'
+      - 'sevenzip'
+      - 'poppler'
+      - 'resvg'
+      - 'imagemagick-full'
     casks:
       - 'firefox'
       - 'iterm2'
@@ -53,6 +59,11 @@ packages:
       - 'jnv'
       - 'fd'
       - 'ttf-jetbrains-mono-nerd'
+      - 'yazi'
+      - '7zip'
+      - 'poppler'
+      - 'resvg'
+      - 'imagemagick'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
@@ -62,6 +73,7 @@ packages:
       - 'vhs'
       - 'ttyd' # required by vhs
       - 'jnv'
+      - 'yazi'
     apts:
       - 'zoxide'
       - 'neovim'
@@ -76,6 +88,9 @@ packages:
       - 'ffmpeg'
       - 'fzf'
       - 'hyperfine'
-      - 'fd'
       - 'jq'
       - 'jnv'
+      - '7zip'
+      - 'poppler-utils'
+      - 'fd-find'
+      - 'imagemagick'
