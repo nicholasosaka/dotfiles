@@ -46,5 +46,10 @@ brew {{ . | quote }}
 {{ end -}}
 EOF
 
+## enable and start docker.socket service if not already enabled
+sys_is_active=$(systemctl is-active docker.socket)
+if [[ "active" != "$sys_is_active" ]]; then
+  echo "Enabling docker.socket"
+  sudo systemctl enable --now docker.socket
+fi
 {{- end -}}
-

@@ -64,6 +64,7 @@ packages:
       - 'poppler'
       - 'resvg'
       - 'imagemagick'
+      - 'docker'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
