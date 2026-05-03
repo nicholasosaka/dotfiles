@@ -13,7 +13,6 @@ if [[ "$origin_url" == *"https"* ]]; then
 
     ssh_url="git@$hostname:$gh_username/$gh_repo"
     git remote set-url origin $ssh_url
-    git remote set-url original $origin_url
 
     echo "Remote origin now uses SSH"
 
