@@ -32,7 +32,7 @@ brew {{ . | quote }}
 {{ end -}}
 EOF
 
-{{ else if eq .osid "linux-arch" -}}
+{{ else if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
 # Arch-specific code
 sudo pacman -S --needed - <<EOF
 {{ range .packages.arch.pacs -}}
