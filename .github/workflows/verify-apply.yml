@@ -15,8 +15,6 @@ jobs:
         run: 'sh -c "$(curl -fsLS https://get.chezmoi.io)"'
       - name: Test chezmoi init and apply
         run: |
-          ./bin/chezmoi init --apply nicholasosaka --promptString "Email
-          address=nicholas.osaka@gmail.com" --promptString "Full name=Nicholas
-          Osaka" --promptChoice "Default editor=nvim"
+          ./bin/chezmoi init --apply nicholasosaka --promptString "Email address=nicholas.osaka@gmail.com" --promptString "Full name=Nicholas Osaka" --promptChoice "Default editor=nvim"
       - name: Verify
         run: ./bin/chezmoi verify
