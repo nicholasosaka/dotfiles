@@ -15,14 +15,7 @@ fi
 # macOS-specific code
 echo "Executing macOS specific installation"
 
-{{ if eq .architecture "arm" }}
-brew_bin=/opt/homebrew/bin/brew
-{{ else }}
-ls /usr/local/
-brew_bin=/usr/local/bin/brew
-{{ end }}
-
-$brew_bin bundle --file=/dev/stdin <<EOF
+/opt/homebrew/bin/brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.darwin.brews -}}
 brew {{ . | quote }}
 {{ end -}}
