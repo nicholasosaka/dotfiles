@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo "OS ID: {{ .osid }}"
+echo "Arch: {{ .architecture }}"
 
 brew_installed_retval=$(which brew)
 if [[ $? != 0 ]]; then
@@ -12,7 +13,14 @@ fi
 {{ if eq .osid "darwin" -}}
 # macOS-specific code
 echo "Executing macOS specific installation"
-brew bundle --file=/dev/stdin <<EOF
+
+{{ if eq .architecture "arm" }}
+brew_bin=/opt/homebrew/bin/brew
+{{ else }}
+brew_bin=/usr/local/bin/brew
+{{ end }}
+
+$brew_bin bundle --file=/dev/stdin <<EOF
 {{ range .packages.darwin.brews -}}
 brew {{ . | quote }}
 {{ end -}}

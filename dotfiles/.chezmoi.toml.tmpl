@@ -3,6 +3,8 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{- $architecture := .chezmoi.arch -}}
+
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $name := promptStringOnce . "name" "Full name" -}}
 
@@ -11,6 +13,7 @@
 
 [data]
     osid = {{ $osid | quote }}
+    architecture = {{ $architecture | quote }}
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     editor = {{ $editor | toToml }}
