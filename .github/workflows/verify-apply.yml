@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@v5
       - name: Install chezmoi
         run: 'sh -c "$(curl -fsLS https://get.chezmoi.io)"'
-      - name: Show environment status
-        run: ./bin/chezmoi doctor
       - name: Test chezmoi init and apply
         run: |
           ./bin/chezmoi init --apply nicholasosaka --promptString "Email
