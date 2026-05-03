@@ -14,11 +14,11 @@ jobs:
       - name: Install chezmoi
         run: 'sh -c "$(curl -fsLS https://get.chezmoi.io)"'
       - name: Show environment status
-        run: chezmoi doctor
+        run: ./bin/chezmoi doctor
       - name: Test chezmoi init and apply
         run: |
           ./bin/chezmoi init --apply nicholasosaka --promptString "Email
           address=nicholas.osaka@gmail.com" --promptString "Full name=Nicholas
           Osaka" --promptChoice "Default editor=nvim"
       - name: Verify
-        run: chezmoi verify
+        run: ./bin/chezmoi verify
