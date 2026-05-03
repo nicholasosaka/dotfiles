@@ -1,0 +1,17 @@
+name: Verify Debian
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install chezmoi
+        run: sh -c "$(curl -fsLS https://get.chezmoi.io)"
+
+      - name: Test chezmoi init and apply
+        run: |
+          ./bin/chezmoi init --apply nicholasosaka --promptString "Email address=nicholas.osaka@gmail.com" --promptString "Full name=Nicholas Osaka" --promptChoice "Default editor=nvim"
