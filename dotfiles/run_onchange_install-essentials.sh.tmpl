@@ -8,6 +8,7 @@ if [[ $? != 0 ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   echo "Homebrew is already installed"
+  echo "brew binary is at $brew_installed_retval"
 fi
 
 {{ if eq .osid "darwin" -}}
@@ -17,6 +18,7 @@ echo "Executing macOS specific installation"
 {{ if eq .architecture "arm" }}
 brew_bin=/opt/homebrew/bin/brew
 {{ else }}
+ls /usr/local/
 brew_bin=/usr/local/bin/brew
 {{ end }}
 
