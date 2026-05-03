@@ -30,7 +30,7 @@ sudo apt-get install <<EOF
 {{ end -}}
 EOF
 
-brew bundle --file=/dev/stdin <<EOF
+/home/linuxbrew/.linuxbrew/bin/brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.debian.brews -}}
 brew {{ . | quote }}
 {{ end -}}
@@ -45,7 +45,7 @@ sudo pacman -S --needed - <<EOF
 {{ end -}}
 EOF
 
-brew bundle --file=/dev/stdin <<EOF
+/home/linuxbrew/.linuxbrew/bin/brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.arch.brews -}}
 brew {{ . | quote }}
 {{ end -}}
