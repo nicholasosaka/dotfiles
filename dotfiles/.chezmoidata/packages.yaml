@@ -65,6 +65,7 @@ packages:
       - 'resvg'
       - 'imagemagick'
       - 'docker'
+      - 'base-devel'
   debian:
     brews:
       - 'dashlane/tap/dashlane-cli'
