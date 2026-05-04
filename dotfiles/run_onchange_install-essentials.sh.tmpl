@@ -48,6 +48,12 @@ sudo pacman -S --needed - <<EOF
 {{ end -}}
 EOF
 
+sudo pacman -S --needed - <<EOF
+{{ range .hypr.arch.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
+
 mkdir -p ~/.local/aur
 git clone https://aur.archlinux.org/yay.git ~/.local/aur/yay
 cd ~/.local/aur/yay
