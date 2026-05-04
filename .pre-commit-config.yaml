@@ -28,7 +28,7 @@ repos:
       - id: check-yaml
         exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
       - id: check-toml
-        exclude: ".tmpl$|^dotfiles/.chezmoitemplates/"
+        exclude: "symlink_*|.tmpl$|^dotfiles/.chezmoitemplates/"
       - id: destroyed-symlinks
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
@@ -39,4 +39,23 @@ repos:
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
-        args: [--force-scope, --strict, --verbose, --scopes, "all,macos,arch,cachy,debian,release,actions", feat, fix, chore, test, build, ci, docs, perf, refactor, revert, style, bump]
+        args:
+          [
+            --force-scope,
+            --strict,
+            --verbose,
+            --scopes,
+            "all,macos,arch,cachy,debian,release,actions",
+            feat,
+            fix,
+            chore,
+            test,
+            build,
+            ci,
+            docs,
+            perf,
+            refactor,
+            revert,
+            style,
+            bump,
+          ]
