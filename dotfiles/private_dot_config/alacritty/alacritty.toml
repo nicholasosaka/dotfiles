@@ -1,2 +1,17 @@
 [general]
 import = ["theme.toml"]
+
+
+[window]
+padding = { x = 20, y = 10 }
+dynamic_padding = true
+opacity = 0.95
+blur = true #only works on macOS
+
+[font]
+normal = { family = "JetBrains Mono Nerd", style = "Regular"}
+size = 11
+
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
