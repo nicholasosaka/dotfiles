@@ -9,7 +9,7 @@ opacity = 0.95
 blur = true #only works on macOS
 
 [font]
-normal = { family = "JetBrains Mono Nerd", style = "Regular"}
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
 size = 11
 
 
