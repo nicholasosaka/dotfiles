@@ -15,8 +15,6 @@ packages:
       - 'fzf'
       - 'gum'
       - 'glow'
-      - 'vhs'
-      - 'ttyd' # required by vhs
       - 'hyperfine'
       - 'jq'
       - 'jnv'
@@ -33,10 +31,10 @@ packages:
       - 'obsidian'
       - 'visual-studio-code'
       - 'font-jetbrains-mono-nerd-font'
+      - 'font-caskaydia-cove-nerd-font'
   arch:
     brews:
       - 'dashlane/tap/dashlane-cli'
-      - 'ttyd' # required by vhs
     pacs:
       - 'zoxide'
       - 'neovim'
@@ -53,12 +51,12 @@ packages:
       - 'fzf'
       - 'gum'
       - 'glow'
-      - 'vhs'
       - 'hyperfine'
       - 'jq'
       - 'jnv'
       - 'fd'
       - 'ttf-jetbrains-mono-nerd'
+      - 'ttf-cascadia-code-nerd'
       - 'yazi'
       - '7zip'
       - 'poppler'
@@ -72,8 +70,6 @@ packages:
       - 'uv'
       - 'gum'
       - 'glow'
-      - 'vhs'
-      - 'ttyd' # required by vhs
       - 'jnv'
       - 'yazi'
     apts:

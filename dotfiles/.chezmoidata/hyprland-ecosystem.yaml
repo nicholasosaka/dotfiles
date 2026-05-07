@@ -2,3 +2,4 @@ hypr:
   arch:
     pacs:
       - 'hyprpaper'
+      - 'waybar'

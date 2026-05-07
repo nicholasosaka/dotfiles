@@ -1,0 +1,16 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": "4",
+  "modules-left": ["custom/arch", "hyprland/workspaces", "hyprland/mode"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "network",
+    "cpu",
+    "memory",
+    "clock"
+  ],
+  "include": [
+    "~/.config/waybar/modules.json"
+  ]
+}
