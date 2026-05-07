@@ -1,0 +1,5 @@
+#!/bin/bash
+
+{{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
+systemctl --user enable --now waybar.service
+{{ end }}
