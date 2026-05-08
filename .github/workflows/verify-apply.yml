@@ -15,10 +15,21 @@ jobs:
         run: 'sh -c "$(curl -fsLS https://get.chezmoi.io)"'
       - name: Test chezmoi init and apply
         run: |
-          ./bin/chezmoi init --apply nicholasosaka --promptString "Email address=nicholas.osaka@gmail.com" --promptString "Full name=Nicholas Osaka" --promptChoice "Default editor=nvim"
+          ./bin/chezmoi init --apply nicholasosaka --promptString "Email address=nicholas.osaka@gmail.com"
         env:
           CHEZMOI_GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Verify
         run: ./bin/chezmoi verify
         env:
           CHEZMOI_GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  codespaces-install:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+      env:
+        CODESPACES: true
+    steps:
+      - uses: actions/checkout@v5
+      - run: ./install.sh
+      - name: chezmoi data
+        run: '"$HOME/.local/bin/chezmoi" data'

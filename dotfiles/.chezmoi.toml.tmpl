@@ -1,3 +1,6 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
@@ -5,15 +8,18 @@
 
 {{- $architecture := .chezmoi.arch -}}
 
-{{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $name := promptStringOnce . "name" "Full name" -}}
 
-{{- $choices := list "nvim" "vim" "nano" -}}
-{{- $editor := promptChoiceOnce . "editor" "Default editor" $choices -}}
+{{- $email := "" -}}
+{{- if $codespaces }}
+{{ $email = "nicholas.osaka@gmail.com" }}
+{{- else -}}
+{{- $email = promptStringOnce . "email" "Email address" -}}
+{{- end }}
 
 [data]
     osid = {{ $osid | quote }}
     architecture = {{ $architecture | quote }}
+    codespaces = {{ $codespaces }}
     email = {{ $email | quote }}
-    name = {{ $name | quote }}
-    editor = {{ $editor | toToml }}
+    name = "Nicholas Osaka"
+    editor = "nvim"
