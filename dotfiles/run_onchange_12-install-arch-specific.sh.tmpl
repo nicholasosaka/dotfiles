@@ -1,0 +1,29 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 12 - Install Arch Specific Packages =="
+echo ""
+
+{{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
+# Arch-specific code
+echo "Executing Arch specific installation"
+sudo pacman -S --needed - <<EOF
+{{ range .packages.arch.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
+
+sudo pacman -S --needed - <<EOF
+{{ range .hypr.arch.pacs -}}
+{{ . }}
+{{ end -}}
+EOF
+
+mkdir -p ~/.local/aur
+git clone https://aur.archlinux.org/yay.git ~/.local/aur/yay
+cd ~/.local/aur/yay
+makepkg -si
+
+yay -S sddm-silent-theme
+
+{{- end -}}

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 20 - Enable systemd Services =="
+echo ""
+
+{{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") (eq .osid "linux-debian") (eq .osid "linux-ubuntu") -}}
+## enable and start docker.socket service if not already enabled
+sys_is_active=$(systemctl is-active docker.socket)
+if [[ "active" != "$sys_is_active" ]]; then
+  echo "Enabling docker.socket"
+  sudo systemctl enable --now docker.socket
+fi
+{{- end -}}

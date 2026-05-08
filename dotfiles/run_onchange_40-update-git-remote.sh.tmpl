@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo ""
+echo "== Running 40 - Update git Remote =="
+echo ""
+
 cd {{ .chezmoi.sourceDir }}
 
 origin_url=$(git remote get-url origin)

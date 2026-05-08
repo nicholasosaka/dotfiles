@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 13 - Install Debian Specific Packages =="
+echo ""
+
+{{ if or (eq .osid "linux-debian") (eq .osid "linux-ubuntu") -}}
+# Debian-specific code
+echo "Executing Debian specific installation"
+sudo apt-get install <<EOF
+{{ range .packages.debian.apts -}}
+{{ . }}
+{{ end -}}
+EOF
+
+{{- end -}}

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 11 - Install macOS Specific Packages =="
+echo ""
+
+{{ if eq .osid "darwin" -}}
+# macOS-specific code
+echo "Executing macOS specific installation"
+
+/opt/homebrew/bin/brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+
+{{- end -}}

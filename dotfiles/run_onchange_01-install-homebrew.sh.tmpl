@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 01 - Install Homebrew =="
+echo ""
+
+brew_installed_retval=$(which brew)
+if [[ $? != 0 ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew is already installed"
+  echo "brew binary is at $brew_installed_retval"
+fi

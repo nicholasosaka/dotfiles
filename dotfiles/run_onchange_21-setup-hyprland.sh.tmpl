@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo ""
+echo "== Running 21 - Setup Hyprland =="
+echo ""
+
 {{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
 systemctl --user enable --now waybar.service
-{{ end }}
+{{ end -}}
