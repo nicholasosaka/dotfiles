@@ -14,12 +14,22 @@ brew {{ . | quote }}
 {{ end -}}
 EOF
 
-{{ else if or (eq .osid "linux-debian") (eq .osid "linux-ubuntu") -}}
+{{ else if (and (or (eq .osid "linux-debian") (eq .osid "linux-ubuntu")) (not .codespaces)) -}}
 # Debian-specific code
 echo "Executing Debian specific installation"
 
 /home/linuxbrew/.linuxbrew/bin/brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.debian.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
+
+{{ else if .codespaces }}
+# GitHub codespaces specific code
+echo "Execuitng GitHub Codespaces specific installation"
+
+/home/linuxbrew/.linuxbrew/bin/brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.codespaces.brews -}}
 brew {{ . | quote }}
 {{ end -}}
 EOF
