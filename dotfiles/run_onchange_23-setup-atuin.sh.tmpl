@@ -2,10 +2,11 @@
 
 {{ if and (hasKey . "atuinUsername") (not .codespaces) }}
 echo ""
-echo "== Running 22 - Setup atuin sync"
+echo "== Running 23 - Setup atuin sync"
 echo ""
 
 if command -v atuin >/dev/null 2>&1; then
+  echo "Logging into Atuin"
   atuin login -u {{ .atuinUsername }}
 fi
 
