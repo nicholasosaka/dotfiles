@@ -1,11 +1,10 @@
 #!/bin/sh
 
+{{ if .codespaces -}}
 echo ""
 echo "== Running 14 - Install Codespaces Specific Packages =="
 echo ""
-
-{{ if .codespaces -}}
-# Debian-specific code
+# Codespace-specific code
 echo "Executing GitHub Codespaces specific installation"
 sudo apt-get install <<EOF
 {{ range .packages.codespaces.apts -}}

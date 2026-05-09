@@ -1,10 +1,9 @@
 #!/bin/sh
 
+{{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
 echo ""
 echo "== Running 12 - Install Arch Specific Packages =="
 echo ""
-
-{{ if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
 # Arch-specific code
 echo "Executing Arch specific installation"
 sudo pacman -S --needed - <<EOF

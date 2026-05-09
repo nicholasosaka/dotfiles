@@ -1,10 +1,9 @@
 #!/bin/sh
 
+{{ if eq .osid "darwin" -}}
 echo ""
 echo "== Running 11 - Install macOS Specific Packages =="
 echo ""
-
-{{ if eq .osid "darwin" -}}
 # macOS-specific code
 echo "Executing macOS specific installation"
 
