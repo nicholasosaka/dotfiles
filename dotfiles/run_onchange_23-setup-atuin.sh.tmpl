@@ -1,14 +1,12 @@
 #!/bin/sh
 
-{{ if hasKey . "atuinUsername" }}
+{{ if and (hasKey . "atuinUsername") (not .codespaces) }}
 echo ""
-echo "== Running 22 - Setup atuin"
+echo "== Running 22 - Setup atuin sync"
 echo ""
 
-if command -v dcli >/dev/null 2>&1; then
-  if command -v atuin >/dev/null 2>&1; then
-    dcli note {{ .dashlaneAtuinKeyName }} | atuin login -u {{ .atuinUsername }}
-  fi
+if command -v atuin >/dev/null 2>&1; then
+  atuin login -u {{ .atuinUsername }}
 fi
 
 {{ end -}}

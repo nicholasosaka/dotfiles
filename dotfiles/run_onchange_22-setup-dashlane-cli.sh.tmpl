@@ -1,5 +1,6 @@
 #!/bin/sh
 
+{{ if not .codespaces }}
 if command -v dcli >/dev/null 2>&1; then
   echo ""
   echo "== Running 22 - Setup Dashlane CLI"
@@ -18,3 +19,4 @@ if command -v dcli >/dev/null 2>&1; then
       fi
   done
 fi
+{{ end }}
