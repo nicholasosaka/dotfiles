@@ -41,6 +41,7 @@ packages:
       - "dashlane/tap/dashlane-cli"
     pacs:
       - "zoxide"
+      - "zen-browser-bin"
       - "neovim"
       - "starship"
       - "eza"
