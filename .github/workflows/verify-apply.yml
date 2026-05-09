@@ -3,7 +3,7 @@ on:
   - push
   - pull_request
 jobs:
-  test:
+  linux-install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -30,6 +30,6 @@ jobs:
       - uses: actions/checkout@v5
       - run: ./install.sh
       - name: Verify
-        run: ./bin/chezmoi verify
+        run: '"$HOME/.local/bin/chezmoi" verify'
       - name: Show chezmoi data
         run: '"$HOME/.local/bin/chezmoi" data'
