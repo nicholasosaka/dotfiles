@@ -1,0 +1,14 @@
+#!/bin/sh
+
+{{ if hasKey . "atuinUsername" }}
+echo ""
+echo "== Running 22 - Setup atuin"
+echo ""
+
+if command -v dcli >/dev/null 2>&1; then
+  if command -v atuin >/dev/null 2>&1; then
+    dcli note {{ .dashlaneAtuinKeyName }} | atuin login -u {{ .atuinUsername }}
+  fi
+fi
+
+{{ end -}}

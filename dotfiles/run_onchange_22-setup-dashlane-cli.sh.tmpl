@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if command -v dcli >/dev/null 2>&1; then
+  echo ""
+  echo "== Running 22 - Setup Dashlane CLI"
+  echo ""
+
+  while true; do
+
+    if dcli sync; then
+      break
+    else
+      read -p "dcli sync failed. Retry? (y/n): " choice
+      case "$choice" in
+            [Yy]* ) continue;;
+            * ) echo "Exiting."; exit 1;;
+        esac
+      fi
+  done
+fi
