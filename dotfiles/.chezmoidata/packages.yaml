@@ -26,6 +26,7 @@ packages:
       - "imagemagick-full"
       - "gh"
       - "nushell"
+      - "atuin"
     casks:
       - "firefox"
       - "iterm2"
@@ -66,6 +67,7 @@ packages:
       - "imagemagick"
       - "docker"
       - "base-devel"
+      - "atuin"
   debian:
     brews:
       - "uv"
@@ -73,6 +75,7 @@ packages:
       - "yazi"
       - "gh"
       - "nushell"
+      - "atuin"
       - "dashlane/tap/dashlane-cli"
     apts:
       - "zoxide"
@@ -98,6 +101,7 @@ packages:
     brews:
       - "uv"
       - "nushell"
+      - "atuin"
     apts:
       - "neovim"
       - "ripgrep"

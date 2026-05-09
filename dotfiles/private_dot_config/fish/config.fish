@@ -12,3 +12,8 @@ source ~/.config/fish/aliases.config.fish
 
 # Homebrew environment variables
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+
+# Atuin history
+if status is-interactive
+  atuin init fish | source
+end

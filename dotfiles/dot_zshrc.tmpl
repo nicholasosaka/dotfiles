@@ -6,6 +6,7 @@ autoload -U +X bashcompinit && bashcompinit
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
 source <(fzf --zsh)
 
 # source .local/bin/env if it exists
