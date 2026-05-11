@@ -27,6 +27,7 @@ packages:
       - "gh"
       - "nushell"
       - "atuin"
+      - "zapp"
     casks:
       - "firefox"
       - "iterm2"
@@ -39,6 +40,7 @@ packages:
     brews:
       - "gh"
       - "nushell"
+      - "zapp"
       - "dashlane/tap/dashlane-cli"
     pacs:
       - "zoxide"
@@ -78,6 +80,7 @@ packages:
       - "gh"
       - "nushell"
       - "atuin"
+      - "zapp"
       - "dashlane/tap/dashlane-cli"
     apts:
       - "zoxide"
