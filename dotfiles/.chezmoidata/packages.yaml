@@ -27,6 +27,7 @@ packages:
       - "gh"
       - "nushell"
       - "atuin"
+      - "docker"
     casks:
       - "firefox"
       - "iterm2"
