@@ -29,8 +29,8 @@ packages:
       - "atuin"
       - "zapp"
     casks:
-      - "firefox"
-      - "iterm2"
+      - "zen"
+      - "ghostty"
       - "obsidian"
       - "visual-studio-code"
       - "font-jetbrains-mono-nerd-font"
