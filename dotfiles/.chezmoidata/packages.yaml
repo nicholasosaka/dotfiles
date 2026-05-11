@@ -27,7 +27,6 @@ packages:
       - "gh"
       - "nushell"
       - "atuin"
-      - "docker"
     casks:
       - "firefox"
       - "iterm2"
@@ -35,6 +34,7 @@ packages:
       - "visual-studio-code"
       - "font-jetbrains-mono-nerd-font"
       - "font-caskaydia-cove-nerd-font"
+      - "docker-desktop"
   arch:
     brews:
       - "gh"
