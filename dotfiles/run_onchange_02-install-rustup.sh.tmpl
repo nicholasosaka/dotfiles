@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo ""
+echo "== Running 02 - Install Rustup =="
+echo ""
+
+if command -v rustup >/dev/null 2>&1; then
+  echo "Rustup is already installed"
+  echo "Rustup binary is at $(command -v rustup)"
+else
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
