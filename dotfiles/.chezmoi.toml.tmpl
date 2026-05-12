@@ -16,6 +16,9 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 {{- $email = promptStringOnce . "email" "Email address" -}}
 {{- end }}
 
+{{- $status := output "dcli" "status" -}}
+{{- $dashlaneActive := and (contains "Logged in: yes" $status) (contains "Locked: no" $status) }}
+
 [data]
     osid = {{ $osid | quote }}
     architecture = {{ $architecture | quote }}
@@ -25,3 +28,4 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
     editor = "nvim"
     atuinUsername = "nosaka"
     dashlaneAtuinKeyName = "atuin-key"
+    dashlaneActive = {{ $dashlaneActive }}

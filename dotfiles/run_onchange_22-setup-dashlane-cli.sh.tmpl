@@ -9,6 +9,7 @@ if command -v dcli >/dev/null 2>&1; then
   while true; do
 
     if dcli sync; then
+      echo "Dashlane CLI sync complete."
       break
     else
       read -p "dcli sync failed. Retry? (y/n): " choice

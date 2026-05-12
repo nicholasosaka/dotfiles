@@ -1,0 +1,17 @@
+#!/bin/sh
+
+{{ if and (.dashlaneActive) (eq .osid "darwin") -}}
+echo ""
+echo "== Running 50 - Show License Keys =="
+echo ""
+
+echo "CleanShotX License: {{ dashlaneNote "cleanshotx-license-key" }}"
+echo "Rectangle Pro License: {{ dashlaneNote "rectangle-pro-license-key" }}"
+
+cat <<'EOF'  > "hazel-key.hazellicense"
+{{ dashlaneNote "hazel-license-key-file" }}
+EOF
+
+echo "License Key for Hazel has been placed in the home directory."
+
+{{- end }}

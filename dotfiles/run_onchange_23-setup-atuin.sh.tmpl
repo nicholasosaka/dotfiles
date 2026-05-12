@@ -1,12 +1,14 @@
 #!/bin/sh
 
-{{ if and (hasKey . "atuinUsername") (not .codespaces) }}
+{{ if and (hasKey . "atuinUsername") (not .codespaces) ( .dashlaneActive ) }}
 echo ""
 echo "== Running 23 - Setup atuin sync"
 echo ""
 
 if command -v atuin >/dev/null 2>&1; then
   echo "Logging into Atuin"
+  echo "Atuin Key:"
+  echo "{{dashlaneNote .dashlaneAtuinKeyName }}"
   atuin login -u {{ .atuinUsername }}
 fi
 
