@@ -1,0 +1,10 @@
+#!/bin/sh
+
+{{ if lookPath "fastfetch" }}
+echo ""
+echo "== Running 90 - System Info =="
+echo ""
+
+fastfetch
+
+{{- end }}
