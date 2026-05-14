@@ -1,0 +1,11 @@
+#!/bin/sh
+
+{{ if and (not .codespaces) ( eq .osid "arch" ) }}
+  echo ""
+  echo "== Running 24 - Setup Tailscale"
+  echo ""
+
+  sudo systemctl enable --now tailscaled
+  sudo tailscale up
+
+{{ end }}

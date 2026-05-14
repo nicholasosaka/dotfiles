@@ -35,6 +35,8 @@ packages:
       - "cleanshot"
       - "hazel"
       - "rectangle-pro"
+      - "zotero"
+      - "tailscale-app"
       - "visual-studio-code"
       - "font-jetbrains-mono-nerd-font"
       - "font-caskaydia-cove-nerd-font"
@@ -75,6 +77,7 @@ packages:
       - "docker"
       - "base-devel"
       - "atuin"
+      - "tailscale"
   debian:
     brews:
       - "uv"
