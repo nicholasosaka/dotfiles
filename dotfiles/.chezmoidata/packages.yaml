@@ -28,6 +28,7 @@ packages:
       - "nushell"
       - "atuin"
       - "zapp"
+      - "go"
     casks:
       - "zen"
       - "ghostty"
@@ -78,6 +79,7 @@ packages:
       - "base-devel"
       - "atuin"
       - "tailscale"
+      - "go"
   debian:
     brews:
       - "uv"
@@ -87,6 +89,7 @@ packages:
       - "nushell"
       - "atuin"
       - "zapp"
+      - "go"
       - "dashlane/tap/dashlane-cli"
     apts:
       - "zoxide"
@@ -113,6 +116,7 @@ packages:
       - "uv"
       - "nushell"
       - "atuin"
+      - "go"
     apts:
       - "neovim"
       - "ripgrep"
