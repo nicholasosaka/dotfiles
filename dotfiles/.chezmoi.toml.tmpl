@@ -16,7 +16,11 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 {{- $email = promptStringOnce . "email" "Email address" -}}
 {{- end }}
 
-{{- $status := output "dcli" "status" -}}
+{{- $dcliExists := lookPath "dcli" -}}
+{{- $status := "" -}}
+{{- if $dcliExists -}}
+  {{- $status = output "dcli" "status" -}}
+{{- end -}}
 {{- $dashlaneActive := and (contains "Logged in: yes" $status) (contains "Locked: no" $status) }}
 
 [data]
