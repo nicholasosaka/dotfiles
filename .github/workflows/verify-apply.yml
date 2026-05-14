@@ -20,6 +20,8 @@ jobs:
           CHEZMOI_GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Show chezmoi data
         run: ./bin/chezmoi data
+      - name: Show system info
+        run : command -v fastfetch >/dev/null && fastfetch
   codespaces-install:
     runs-on: ubuntu-latest
     container:
@@ -33,3 +35,5 @@ jobs:
         run: '"$HOME/.local/bin/chezmoi" verify'
       - name: Show chezmoi data
         run: '"$HOME/.local/bin/chezmoi" data'
+      - name: Show system info
+        run : command -v fastfetch >/dev/null && fastfetch

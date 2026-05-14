@@ -8,21 +8,25 @@ cd {{ .chezmoi.sourceDir }}
 
 origin_url=$(git remote get-url origin)
 
-if [[ "$origin_url" == *"https"* ]]; then
-  echo "Remote origin uses HTTPS"
-  hostname=$(echo "$origin_url" | awk -F'/' '{print $3}')
-  if [[ "$hostname" == "github.com" ]]; then
-    gh_username=$(echo "$origin_url" | awk -F'/' '{print $4}')
-    gh_repo=$(echo "$origin_url" | awk -F'/' '{print $5}')
-
-    ssh_url="git@$hostname:$gh_username/$gh_repo"
-    git remote set-url origin $ssh_url
-
-    echo "Remote origin now uses SSH"
-
-  else
-    echo "Remote origin is not GitHub, skipping remote URL conversion as this isn't set up for other providers"
-  fi
-else
-  echo "Remote origin uses SSH, no remote URL conversion needed."
-fi
+case "$origin_url" in
+  *github.com*)
+    echo "Remote origin uses HTTPS on GitHub"
+    
+    repo_path="${origin_url#*github.com}"
+    repo_path="${repo_path%.git}"
+    
+    ssh_url="git@github.com:$repo_path.git"
+    git remote set-url origin "$ssh_url"
+    
+    echo "Remote origin successfully converted to: $ssh_url"
+    ;;
+  https://*)
+    echo "Remote origin is HTTPS but not GitHub. Skipping conversion."
+    ;;
+  git@*)
+    echo "Remote origin already uses SSH. No conversion needed."
+    ;;
+  *)
+    echo "Unknown or missing remote origin."
+    ;;
+esac

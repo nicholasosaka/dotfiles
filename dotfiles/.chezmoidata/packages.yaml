@@ -122,3 +122,4 @@ packages:
       - "ripgrep"
       - "jq"
       - "jnv"
+      - "fastfetch"
