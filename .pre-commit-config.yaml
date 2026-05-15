@@ -43,8 +43,6 @@ repos:
             --force-scope,
             --strict,
             --verbose,
-            --scopes,
-            "all,macos,arch,cachy,debian,release,actions,codespaces",
             feat,
             fix,
             chore,
