@@ -12,9 +12,10 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 {{- $latex := false -}}
 {{- if $codespaces }}
 {{ $email = "nicholas.osaka@gmail.com" }}
+{{ $latex = false}}
 {{- else -}}
 {{- $email = promptStringOnce . "email" "Email address" -}}
-{{- $latex = promptBoolOnce . "latex" "Install LaTeX?" -}}
+{{- $latex = promptBoolOnce . "latex" "Install LaTeX" -}}
 {{- end }}
 
 {{- $dcliExists := lookPath "dcli" -}}
