@@ -15,7 +15,7 @@ case "$origin_url" in
     repo_path="${origin_url#*github.com}"
     repo_path="${repo_path%.git}"
     
-    ssh_url="git@github.com:$repo_path.git"
+    ssh_url="git@github.com$repo_path.git"
     git remote set-url origin "$ssh_url"
     
     echo "Remote origin successfully converted to: $ssh_url"
