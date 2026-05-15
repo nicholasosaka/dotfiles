@@ -8,12 +8,13 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
 
 {{- $architecture := .chezmoi.arch -}}
 
-
 {{- $email := "" -}}
+{{- $latex := false -}}
 {{- if $codespaces }}
 {{ $email = "nicholas.osaka@gmail.com" }}
 {{- else -}}
 {{- $email = promptStringOnce . "email" "Email address" -}}
+{{- $latex = promptBoolOnce . "latex" "Install LaTeX?" -}}
 {{- end }}
 
 {{- $dcliExists := lookPath "dcli" -}}
@@ -30,6 +31,7 @@ sourceDir = {{ .chezmoi.sourceDir | quote }}
     email = {{ $email | quote }}
     name = "Nicholas Osaka"
     editor = "nvim"
+    latex = {{ $latex }}
     atuinUsername = "nosaka"
     dashlaneAtuinKeyName = "atuin-key"
     dashlaneActive = {{ $dashlaneActive }}

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+{{ if .latex -}}
+echo ""
+echo "== Running 15 - Install LaTeX =="
+echo ""
+
+{{ if eq .osid "darwin" -}}
+
+brew install --cask mactex
+
+eval "$(/usr/libexec/path_helper)"
+
+{{- else if or (eq .osid "linux-arch") (eq .osid  "linux-cachyos") -}}
+
+sudo pacman -S texlive-most
+
+{{- else if or (eq .osid "linux-debian") (eq .osid "linux-ubuntu") -}}
+
+sudo apt install texlive-full
+
+{{ end }}
+{{ end -}}
