@@ -1,4 +1,6 @@
 packages:
+  trustedtaps:
+    - "dashlane/tap"
   darwin:
     brews:
       - "fastfetch"
