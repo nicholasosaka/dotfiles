@@ -29,6 +29,7 @@ packages:
       - "atuin"
       - "zapp"
       - "go"
+      - "httpie"
     casks:
       - "zen"
       - "ghostty"
@@ -49,6 +50,7 @@ packages:
       - "nushell"
       - "zapp"
       - "dashlane/tap/dashlane-cli"
+      - "httpie"
     pacs:
       - "zoxide"
       - "zen-browser-bin"
@@ -112,6 +114,7 @@ packages:
       - "poppler-utils"
       - "fd-find"
       - "imagemagick"
+      - "httpie"
   codespaces:
     brews:
       - "uv"
